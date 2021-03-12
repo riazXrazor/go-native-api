@@ -8,7 +8,7 @@ import (
 
 type server struct{}
 
-func home(w http.ResponseWriter, r *http.Request) {
+func (s *server) ServerHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type","application/json")
 	
 	switch r.Method {
